@@ -88,7 +88,7 @@
 		<form action="#" method="POST">
 			<h2>Preencha o formulário com suas informações.</h2>
 	<?php } else { ?>
-		<form action="requisicao_pagseguro.php" method="POST">
+		<form action="<?php echo site_url(); ?>/requisicao_pagseguro.php" method="POST">
 			<h2>Confirme suas informações. Você será redirecionado a página do PagSeguro para finaliza a assinatura do impulsionamento.</h2>
 	<?php } ?>
 			<!--<h2><?php // _e( 'Select Plan', AT_TEXTDOMAIN ); ?></h2>
@@ -177,8 +177,5 @@
 			<input type="submit" value="<?php _e( 'Order now', AT_TEXTDOMAIN ); ?>" />
 		</form>	
 	<p>&nbsp;</p>
-	<?php
-	}
-	?>
 
 </div>
