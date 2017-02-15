@@ -1,4 +1,12 @@
 <?php
+/**
+ * Template Name: Validação Pagseguro
+ */
+?>
+
+<?php get_header(); ?>
+
+<?php
 $url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
 
 //$data = 'email=seuemail@dominio.com.br&amp;token=95112EE828D94278BD394E91C4388F20&amp;currency=BRL&amp;itemId1=0001&amp;itemDescription1=Notebook Prata&amp;itemAmount1=24300.00&amp;itemQuantity1=1&amp;itemWeight1=1000&amp;itemId2=0002&amp;itemDescription2=Notebook Rosa&amp;itemAmount2=25600.00&amp;itemQuantity2=2&amp;itemWeight2=750&amp;reference=REF1234&amp;senderName=Jose Comprador&amp;senderAreaCode=11&amp;senderPhone=56273440&amp;senderEmail=comprador@uol.com.br&amp;shippingType=1&amp;shippingAddressStreet=Av. Brig. Faria Lima&amp;shippingAddressNumber=1384&amp;shippingAddressComplement=5o andar&amp;shippingAddressDistrict=Jardim Paulistano&amp;shippingAddressPostalCode=01452002&amp;shippingAddressCity=Sao Paulo&amp;shippingAddressState=SP&amp;shippingAddressCountry=BRA';
@@ -28,7 +36,7 @@ $data['shippingAddressPostalCode'] 	= !empty($_POST['shippingAddressPostalCode']
 $data['shippingAddressCity'] 		= !empty($_POST['shippingAddressCity']) ? $_POST['shippingAddressCity'] : '';
 $data['shippingAddressState'] 		= !empty($_POST['shippingAddressState']) ? $_POST['shippingAddressState'] : '';
 $data['shippingAddressCountry'] 	= !empty($_POST['shippingAddressCountry']) ? $_POST['shippingAddressCountry'] : 'BRA';
-$data['redirectURL'] 				= 'http://www.sounoob.com.br/paginaDeAgracedimento';
+$data['redirectURL'] 				= 'http://grupoaudax.com.br/paginaDeAgracedimento';
 
 $data = http_build_query($data);
 
@@ -56,4 +64,6 @@ if(count($xml -> error) > 0){
 	header('Location: erro.php?tipo=dadosInvalidos');
 	exit;
 }
-header('Location: https://pagseguro.uol.com.br/v2/checkout/payment.html?code=' . $xml -> code);
+header('Location: https://pagseguro.uol.com.br/v2/checkout/payment.html?code=' . $xml -> code); ?>
+
+<?php get_footer(); ?>
